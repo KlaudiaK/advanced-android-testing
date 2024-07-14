@@ -56,6 +56,6 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="@{task.titleForList}"
-            app:completedTask="@{task.completed}" />
+            completedTask="@{task.completed}" />
     </LinearLayout>
 </layout>
