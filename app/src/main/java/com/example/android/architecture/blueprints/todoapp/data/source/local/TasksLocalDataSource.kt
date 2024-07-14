@@ -42,7 +42,11 @@ class TasksLocalDataSource internal constructor(
 
     override fun observeTask(taskId: String): LiveData<Result<Task>> {
         return tasksDao.observeTaskById(taskId).map {
-            Success(it)
+            if (it != null) {
+                Success(it)
+            } else {
+                Error(Exception("Task not found"))
+            }
         }
     }
 
